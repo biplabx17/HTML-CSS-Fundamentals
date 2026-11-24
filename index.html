@@ -63,11 +63,40 @@
             <h2>What is CSS?</h2>
             <p>CSS is used to add colours, styles and layouts to a web page.</p>
         </section>
+    <section>
+    <h2>JavaScript Greeting</h2>
+    <p>Enter your name:</p>
+
+    <input type="text" id="username" placeholder="Your name">
+
+    <button onclick="showGreeting()">Show Greeting</button>
+    <button onclick="clearMessage()">Clear</button>
+
+    <p id="message"></p>
+</section>
     </main>
 
     <footer>
         <p>Created for my internship task</p>
     </footer>
+<script>
+    function showGreeting() {
+        let name = document.getElementById("username").value;
 
+        if (name.trim() === "") {
+            document.getElementById("message").innerHTML =
+                "Please enter your name!";
+        } else {
+            document.getElementById("message").innerHTML =
+                "Hello, " + name + "! Welcome to JavaScript.";
+        }
+    }
+
+    function clearMessage() {
+        document.getElementById("username").value = "";
+        document.getElementById("message").innerHTML = "";
+    }
+</script>
 </body>
+
 </html>
